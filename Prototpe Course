@@ -1,0 +1,59 @@
+Training Tools:-
+
+a) Bitbucket- Bitbucket is a Git-based source code repository hosting service owned by Atlassian. Bitbucket gives teams one place to plan projects, collaborate on code, test, and deploy.
+
+b) Codegrip- Codegrip will automatically scan your projects at every commit performed by any developer. In the code review report, you can see all the bugs, vulnerabilities, and duplication in your code. also shows the location of the issues and suggestions to solve them.
+This helps the developer understand the reason for the issue, its potential downsides as well as the best solution for the same. You can integrate Slack with CodeGrip and get automated reports directly in the Slack channel of your choice.
+
+c) Figma- Figma is a powerful design tool that helps you to create anything: websites, applications, logos, and much more.
+
+d) Jenkins – an open source automation server which enables developers around the world to reliably build, test, and deploy their software. Jenkins is Java-based and can be installed from Ubuntu packages or by downloading and running its web application archive (WAR) file. We will install Jenkins by adding its Debian package repository, and using that repository to install the package with apt. It supports CI/CD
+
+e) Slack- Instant Messanger App
+
+
+API- PI is the acronym for Application Programming Interface, which is a software intermediary that allows two applications to talk to each other. Each time you use an app like Facebook, send an instant message, or check the weather on your phone, you’re using an API. When you use an application on your mobile phone, the application connects to the Internet and sends data to a server. The server then retrieves that data, interprets it, performs the necessary actions and sends it back to your phone. The application then interprets that data and presents you with the information you wanted in a readable way. This is what an API is - all of this happens via API. Imagine you’re sitting at a table in a restaurant with a menu of choices to order from. The kitchen is the part of the “system” that will prepare your order. What is missing is the critical link to communicate your order to the kitchen and deliver your food back to your table. That’s where the waiter or API comes in. The waiter is the messenger – or API – that takes your request or order and tells the kitchen – the system – what to do. Then the waiter delivers the response back to you; in this case, it is the food.
+
+Backward Compatibility- Maintaining backward compatibility between different releases of your API is of utmost importance in ensuring that your API will remain compatible with all of the clients that consume it.
+
+API Failure Modes- Mode uses conventional HTTP response codes to indicate the success or failure of an API request. In general: Codes in the 2xx range indicate success. Codes in the 4xx range indicate an error that failed given the information provided (e.g., a required parameter was omitted, a task failed, etc.). Our API resources can produce errors for many reasons, such as invalid parameters, authentication errors, security considerations, and rate limits. Most common API Error codes are:-
+a) 400 Bad Request- It indicates that the server was unable to process the request sent by the client due to invalid syntax, invalid request message framing, or deceptive request routing.
+b) 401 Unauthorized- This response is given any time a request is made against a resource or endpoint that requires an authorization and none was provided.
+c) 403 Forbidden- The 403 Forbidden Error happens when the web page (or another resource) that you’re trying to open in your web browser is a resource that you’re not allowed or authorized to access.
+d) 404 Not Found- This response is given at any time a resource is required to fulfill the request and could not be found.
+e) 412 Precondition Failed – one or more conditions in the request header fields evaluated to false
+f) 500 Internal Server Error – a generic error occurred on the server
+g) 503 Service Unavailable – the requested service is not available
+
+Leaking Implementation Details- A leaky implementation is one where the underlying implementation details become part of the API itself — a reference to a specific piece of software, for instance. It simply means that your abstraction exposes some of the implementation details, or that you need to be aware of the implementation details when using the abstraction. This can be problematic as the customers will grow to rely on these non-essential details, and “you can no longer change that implementation.Impact of a leaky abstraction are:-
+– Tighter coupling between service provider and consumer
+– Security: Attacker can guess internal implementation and launch a data hack by manipulating requests which would look valid to the server
+
+
+
+
+Rest API- REST(REpresentational State Transfer) is an architectural style, or design pattern, for APIs. It means when a RESTful API is called, the server will transfer to the client a representation of the state of the requested resource. For example, when a developer calls Instagram API to fetch a specific user (the resource), the API will return the state of that user, including their name, the number of posts that user posted on Instagram so far, how many followers they have, and more. The representation or format of the state can be in a JSON format, and probably for most APIs this is indeed the case. It can also be in XML or HTML format. What the server does when you, the client, call one of its APIs depends on 2 things that you need to provide to the server:
+a) An identifier for the resource you are interested in. This is the URL for the resource, also known as the endpoint. In fact, URL stands for Uniform Resource Locator.
+b) The operation you want the server to perform on that resource, in the form of an HTTP method, or verb. The common HTTP methods are GET, POST, PUT, and DELETE. The HTTP method GET indicates that we want to get the state of that user.
+
+Key Terms
+a) Client — the client is the person or software who uses the API. It can be a developer, for example you, as a developer, can use Twitter API to read and write data from Twitter, create a new tweet and do more actions in a program that you write. Your program will call Twitter’s API. The client can also be a web browser. When you go to Twitter website, your browser is the client who calls Twitter API and uses the returned data to render information on the screen.
+b) Resource — a resource can be any object the API can provide information about. In Instagram’s API, for example, a resource can be a user, a photo, a hashtag. Each resource has a unique identifier. The identifier can be a name or a number.
+
+A RESTful web application exposes information about itself in the form of information about its resources. It also enables the client to take actions on those resources, such as create new resources (i.e. create a new user) or change existing resources (i.e. edit a post). REST API's don't depend on external libraries to access the web services.
+
+
+HTTP Status Codes- HTTP accomplishes this with five categories of status codes:
+
+100-level (Informational) – server acknowledges a request
+200-level (Success) – server completed the request as expected
+300-level (Redirection) – client needs to perform further actions to complete the request
+400-level (Client error) – client sent an invalid request
+500-level (Server error) – server failed to fulfill a valid request due to an error with the server
+
+Sometimes a status code is not enough to show the specifics of the error. When needed, we can use the body of the response to provide the client with additional information. When providing detailed responses, we should include:
+1) Error – a unique identifier for the error
+2) Message – a brief human-readable message
+3) Detail – a lengthier explanation of the error
+
+A Uniform Resource Identifier (URI) is a unique sequence of characters that identifies a logical or physical resource used by web technologies.

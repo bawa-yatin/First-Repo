@@ -1,0 +1,101 @@
+Git- It is an open-source, distributed version control system responsible for keeping track of the changes that have been made to the code over time. Using Git we can track our project history and go back to the previous state if anything goes wrong. Version control system falls under two categories:-
+
+a) Centralized Version Control System- A centralized version control system has a single server that contains all the file versions. This enables multiple clients to simultaneously access files on the server, pull them to their local computer or push them onto the server from their local computer. This way, everyone usually knows what everyone else on the project is doing. The biggest issue with this structure is that everything is stored on the centralized server. If something were to happen to that server, nobody can save their versioned changes, pull files or collaborate at all.
+
+b) Distributed Version Control System - With distributed version control systems, clients don’t just check out the latest snapshot of the files from the server, they fully mirror or clone the repository, including its full history. Thus, everyone collaborating on a project owns a local copy of the whole project, i.e. owns their own local database with their own complete history. "Git" is the most well-known example of distributed version control systems.
+
+Basic Workflow of Git- On creating some files in our project directory, when we are ready to record this state, we add the files in the staging area using 'git add' command. The staging area is like a rough draft space, where we can git add the version of a file or multiple files that you want to save in your next commit. After reviewing the files properly, we use the commit command to take a snapshot of the added files and store it permanently in the repository. Whenever we make a new commit, snapshot of the entire project get's stored in the repository.
+
+After installing git, we need to configure it by providing user name, email, default editor and line ending. Now these config settings can be made at 3 different levels:
+1) System- The settings apply to all users of the current computer.
+2) Global - The settings apply to all repositries of the current user.
+3) Local - The settings apply to the current repository.
+
+
+'echo' command- Basic Unix/Linux Command to write content to a file.
+'mv' command- Unix/Linux Command to move and rename a file.
+
+
+
+"gitignore" file is a text file that tells Git which files or folders to ignore in a project. A local .gitignore file is usually placed in the root directory of a project. You can also create a global .gitignore file and any entries in that file will be ignored in all of your Git repositories. Things we can put in this file is Logs, Compiled Binaries, Coverage Reports, Intermediate Files
+
+Git Commands
+
+a) git config --global user.name "Name"- Command for configuring user settings at global level,
+git config --global core.editor "code --wait" - Command for configuring default editor, 
+git config --global -e - Command for editing default global settings using the default editor,
+git config --global core-autocrlf input - Command for configuring line ending settings on Mac/Linux. For windows instead of 'input' it should be true. In Windows, line ending is denoted by '\r'(carriage return) and '\n'(Line feed). In Linux/Mac, it is denoted by '\n'.
+
+git config --global --remove-section user.name (Removing a global identity)
+
+To force git to look for your identity only within a repository's settings, not in the global config:
+git config --global user.useConfigOnly true
+
+b) git init- For intializing a new Git Repository. After intialization, it will have a hidden folder by the name .git which will have info about our project history, branches and so on. If we remove this folder, we will lose all our proect history.
+c) ls- List all the files present inside the repository, 
+ls -a - List all the files present inside the repository including hidden files
+
+c) git add - For adding files in the staging area
+Options:
+1) git add filename
+2) git add *.txt - Add all the text files
+3) git add . - Adds the entire directory recursively meaning it would also add large binary files and log files which we don't have to push in our repository. Extra caution is required while using it.
+4) git ls-files - Displays files that are present in the staging area
+5) git rm filename - Removes the file from the working directory as well as the staging area
+6) git mv filename newname - Renames or move the file in the working directory as well as the staging area
+
+To skip the git add step, we can use git commit -a -m or git commit -am "Message"
+
+d) git status -s :- For displaying a shorter and less-wordy status for the files that have been added or modified.
+
+e) git diff --staged :- This command is used to the show the exact lines of code that have been staged. The output of the command is that it compares two different copies of the same file. First one is the old copy of that file which was in the last commit and the second one is the new copy with the changes that we want to commit.
+
+git diff- This command is used to the show the exact changes in our working directory that have not been staged yet.
+
+f) git log- The git log command shows a list of all the commits made to a repository. You can see the hash of each Git commit, the message associated with each commit, and more metadata. This command is useful for displaying the history of a repository.
+> --oneline- Shows a short summary of all the commits that have been made to the repository.
+> --reverse- Shows the list of commits in reverse order..First commit at the top and the latest commit at the last position.
+
+g) git show - This command shows us the exact changes that we have made in a given commit. We can refer a commit using the Unique Identifier or using the HEAD pointer. By default, HEAD pointer points to the latest commit that we have made. To point to the previous commit, we use HEAD~1 or 2 or 3.
+> If we want to see the exact or final version of the file in the particular commit, we specify git show HEAD:filename
+
+h) git ls-tree HEAD- It show all the files and directories present in the particular commit. All objects displayed are stored in git's database. Any directories or folders are represented using 'tree' and files are represented using 'blob' object.
+
+i) restore- Command for unstaging the changes i.e all the changes in the staging area were restored back to the working directory.
+git restore --staged filename. For a new file that is present in the staging area but was not present in the last commit, restore command will remove this file from the staging area and take it back to it's previous state i.e untracked file.
+In order to restore some changes or files to their previous state we can make use of 'restore' command. 'restore' command will take the previous copy of that file from the staging area and put in the working directory which will ultimately take it back to it's previous state.
+
+j) git clean- It is used to remove untracked files. But once removed there's no going back.
+
+k) git checkout- The git checkout command is used to switch between branches in a repository. Be careful with your staged files and commits when switching between branches.
+
+l) git merge - The git merge command is used to merge the branches. The git merge command facilitates you to take the data created by git branch and integrate them into a single branch. We can merge two branches by using commit id or branch name.
+
+m) git push- The git push command is used to upload local repository content to a remote repository. Pushing is how you transfer commits from your local repository to a remote repo.
+> git push origin master :- the term origin stands for the remote repository, and master is considered as the main branch. So, the entire statement "git push origin master" pushed the local content on the master branch of the remote location.
+
+n) git branch -m <branch name> - For renaming the just created branch
+
+o) git remote- The git remote command is used to create, view, and delete connections to remote repositories. The connections here are not like direct links into other repositories, but as bookmarks that serve as convenient names to be used as a reference.
+
+p) git stash- The git stash command takes your modified tracked files and saves it on a pile of incomplete changes that you can reapply at any time. To go back to work, you can use the stash pop. The git stash command will help a developer switch branches to work on something else without committing to incomplete work.
+
+# Store current work with untracked files
+  git stash -u
+
+# Bring stashed work back to the working directory
+  git stash pop
+  
+q) Git Pull- The Git pull command is used to fetch and merge code changes from the remote repository to the local repository. Git pull is a combination of two commands, Git fetch followed by Git merge. In the first stage, Git fetch is executed that downloads content from the required remote repository. Then, the Git merge command combines multiple sequences of commits into a single branch.
+
+
+
+Github/Bitbucket- It’s an online database that allows you to keep track of and share your Git version control projects outside of your local computer/server. Unlike Git, GitHub or Bitbucket is exclusively cloud-based.
+
+The Readme file is often the first file which the users read. It is a text file that contains the information for the user about the software, project, code, game, or it might contain instructions, help, or details about the patches or updates.
+
+
+Different between Forking and Cloning
+a) Forking a repository creates a copy of the original repository on our GitHub account whereas Cloning a repository creates a copy of the original repository on our local machine
+b) Changes made to the forked repository can be merged with the original repository via a pull request whereas Changes made to the cloned repository cannot be merged with the original repository unless you are the collaborator or the owner of the repository
+c) Forking is just containing a separate copy of the repository and there is no command involved whereas Cloning is done through the command ‘git clone‘ 

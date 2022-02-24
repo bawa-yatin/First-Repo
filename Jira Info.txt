@@ -1,0 +1,29 @@
+Agile Software Developement Method- It is a time-boxed, iterative and incremental approach to software development, to deliver the product incrementally, instead all at one. Let us a assume we have a software, which has 3 features or functionalities. Now to successfully build each of the features we need to follow 4 steps:
+a) Plan
+b) Implement
+c) Test
+d) Review
+
+If the feature passes all the 4 steps and attains the level of satisfaction, then it treated as complete and is then passed to the end user. Also agile approach is not a linear approach.
+
+
+Scrum- It is the hierarchy of employees that are working for a software development company and how they operate to acheive agile development.
+Scrum Roles:
+a) Product Owner- Reponsible for noting down the business needs and requirements of the customer. The job of the product owner is to have a clear discussion with the customer and understand what exactly he wants. He maintains the product backlog to track what status the software is currently in. The scrum master and the development team will pick up points from the product backlog and will start working on them.
+
+b) Scrum Master- He acts as an intermediatory between the product owner and the dev team. He ensures that scrum methodologies are being followed while development. He also helps in breaking down 'stories' into 'tasks' appropriately. Also ensures completion of tasks in the said amount of time.
+
+c) Scrum Team- Consists of software developers and quality assurance people. Breaks down work into subtasks and ensures timely delivery of work with quality assurance. Also communicates their progress to the scrum master.
+
+
+Thing to remember is that the product owner provides epics i.e tasks in non-technical format. It is broken down into stories which represent's into more technical form and finally it is divided into multiple small tasks which need to be completed in a limited time frame which is referred to as sprint.
+
+Jira Software- It is a project management tool based on the concept of agile-scrum methodology. Also it is used as a tool to keep track of the bugs and issues in the features or tasks developed.
+
+Reasons behind using Jira:-
+a) Helps in creating backlogs
+b) Helps in creating sprints
+c) Helps in creating tasks
+d) Helps in updating status of tasks on the board
+e) Managing releases
+f) Easy code integration with whatever repository you like.
