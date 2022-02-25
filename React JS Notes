@@ -1,0 +1,32 @@
+Short Introduction on DOM- Imagine this: you have the TV on. You don't like the show that's being streamed, and you want to change it. You also want to increase its volume. To do that, there has to be a way for you to interact with your television. And what do you use to do that?
+A remote.
+The remote serves as the bridge which allows you interact with your television.You make the TV active and dynamic via the remote. And in the same way, JavaScript makes the HTML page active and dynamic via the DOM. 
+Just like how the television can't do much for itself, JavaScript doesn't do much more than allow you to‌‌ perform some calculations or work with basic strings. So to make an HTML document more interactive and dynamic, the script‌‌ needs to be able to access the contents of the document and it also needs to know when the user is interacting with it.‌‌
+
+The DOM is a tree-like representation of the web page that gets loaded into the browser. It represents the web page using a‌‌ series of objects. The main object is the document object, which in turn houses other objects which also house their own objects, and so on. DOM has properties and methods which you can we to get information about the document using a rule known as dot notation.
+
+
+
+React JS- It is a JS Library for building fast and interactive user interfaces. Every React application consists of 'components' which is basically a single piece of UI. Every component built must be independent, isolated and re-usable in nature. In other words, React is simply a JS Library responsible for rendering views and making sure that view is in sync with the state.
+
+Every React app has at least one component which is referred to as 'root' component which represents the entire application and contains other child components. It is somewhat similar to a tree structure.
+
+A component in React is implemented as JS Class with some state(data which we want to display when component is rendered) and a render method(responsible for how our UI should look like or responsible for displaying the specified HTML code inside the specified HTML element)
+The output of a render method is a React element which is a plain JS Object that maps or connects to a DOM element. React keeps a lightweight representation of DOM in memory which is referred to as Virtual DOM.
+
+Whenever we change or update the state of our component, React will create a new react element, compare the changes of the new element with the previous one and will automatically update the actual DOM to match that state.
+
+
+For installing node on Linux we either use nodesource or nvm(node version manager). NVM allows you to use different node versions for different projects. Sometimes, you may be collaborating on a project with someone using a different version of node and you need to switch
+
+Commands for installing node and npm
+a) sudo apt install nodejs
+b) sudo apt install npm
+c) npm i -g create-react-app@version(1.5.2) // create-react-app is a utility package that enables you to set up all the tools required to create a React Application.
+
+If you ever need to switch node versions, you can simply run nvm use <version-number> , for example nvm use v12.18.1.
+To list the different node versions you have installed with nvm, run nvm ls.
+
+
+On installation it provides us a lightweight dev server, webpack for bundling our files, babel(Modern JS compiler) for compiling our JSX(Javascript XML) code into plain JS code that browsers can understand.
+By default, all configuration settings are done when we create our react app through create-react-app package. If we want to manually configure it, we can use 'npm run eject'
